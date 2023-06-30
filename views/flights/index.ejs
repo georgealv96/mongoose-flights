@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="/flights/new">Add Flight</a>
+  <h1>Flights</h1>
+  <% flights.forEach(flight => { %>
+    <p>-------------</p>
+    <p><%= flight.airline %></p>
+    <p><%= flight.airport %></p>
+    <p><%= flight.flightNo %></p>
+    <p><%= flight.departs %></p>
+  <% }) %>
+</body>
+</html>
+
+<!-- FIX HOW THIS VIEW LOOKS -->
