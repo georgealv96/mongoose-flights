@@ -8,8 +8,7 @@ module.exports = {
 
 async function addTicket(req, res) {
   req.body.flight = await Flight.findById(req.params.id)
-  // await Ticket.create(req.body)
-  console.log(req.body)
+  await Ticket.create(req.body)
   res.redirect(`/flights/${req.params.id}`)
 }
 

@@ -30,13 +30,12 @@ async function create(req, res) {
   }
 }
 
-//res.render('flights/show', { flight, tickets })
 async function show(req, res) {
   try {
     const flight = await Flight.findById(req.params.id)
-    // const tickets = await Ticket.find({ flight: flight._id })
-    // console.log(tickets)
-    res.render('flights/show', { flight })
+    const tickets = await Ticket.find({ flight: req.params.id })
+    console.log(tickets, '<<< tickets')
+    res.render('flights/show', { flight, tickets })
   } catch (err) {
     res.send(err)
   }
