@@ -4,16 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-  <a href="/flights/new">Add Flight</a>
+  <header>
+    <a href="/flights/new">Add Flight</a>
+  </header>
   <h1>Flights</h1>
   <% flights.forEach(flight => { %>
-    <p>-------------</p>
-    <p><%= flight.airline %></p>
-    <p><%= flight.airport %></p>
-    <p><%= flight.flightNo %></p>
-    <p><%= flight.departs %></p>
+    <section>
+      <h3>Flight #<%= flight.flightNo %></h3>
+      <div><%= flight.airline %></div>
+      <div><%= flight.airport %></div>
+      <div><%= flight.departs %></div>
+      <a href="/flights/<%= flight._id %>" id="details-link">DETAILS</a>
+    </section>
   <% }) %>
 </body>
 </html>
