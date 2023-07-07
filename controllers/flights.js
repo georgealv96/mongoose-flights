@@ -18,11 +18,13 @@ async function newFlight(req, res) {
 }
 
 async function create(req, res) {
-  // if (req.body.departs === '') {
-  //   delete req.body.departs
-  // }
+  if (req.body.departs === '')
+    req.body.departs = new Date(
+      new Date().setFullYear(new Date().getFullYear() + 1)
+    )
   try {
     await Flight.create(req.body)
+    console.log(req.body)
     res.redirect('/flights')
   } catch (err) {
     console.log(err)
