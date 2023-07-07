@@ -11,6 +11,9 @@
     <a href="/flights/new">Add Flight</a>
   </header>
   <h1>Flights</h1>
+  <% if (!flights.length) { %>
+    <h2>No Flights Added</h2>
+  <% } %>
   <% flights.forEach(flight => { %>
     <section>
       <h3>Flight #<%= flight.flightNo %></h3>

@@ -63,6 +63,6 @@ form > button {
   font-size: 2vmin;
 }
 
-h2 {
+h2, p {
   margin: 2vmin;
 }

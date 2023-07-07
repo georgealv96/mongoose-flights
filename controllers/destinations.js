@@ -7,7 +7,6 @@ module.exports = {
 async function create(req, res) {
   try {
     const flight = await Flight.findById(req.params.id)
-
     // Add the new destinations in ascending order
     if (flight.destinations.length < 1) {
       flight.destinations.push(req.body)
